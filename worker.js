@@ -26,15 +26,32 @@ const NGINX_BODY = new TextEncoder().encode(`<!DOCTYPE html>
 <title>Welcome to nginx!</title>
 <style>
 html { color-scheme: light dark; }
-body { width: 35em; margin: 0 auto; font-family: Tahoma, Verdana, Arial, sans-serif; }
+body { width: 35em; margin: 0 auto;
+font-family: Tahoma, Verdana, Arial, sans-serif; }
 </style>
 </head>
 <body>
 <h1>Welcome to nginx!</h1>
-<p>If you see this page, the nginx web server is successfully installed and working.</p>
+<p>If you see this page, the nginx web server is successfully installed and
+working. Further configuration is required.</p>
+
+<p>For online documentation and support please refer to
+<a href="http://nginx.org/">nginx.org</a>.<br/>
+Commercial support is available at
+<a href="http://nginx.com/">nginx.com</a>.</p>
+
+<p><em>Thank you for using nginx.</em></p>
 </body>
-</html>\r\n`);
-const NOT_FOUND_BODY = new Uint8Array([78, 111, 116, 32, 70, 111, 117, 110, 100]);
+</html>
+`);
+const NOT_FOUND_BODY = new TextEncoder().encode(`<html>
+<head><title>404 Not Found</title></head>
+<body>
+<center><h1>404 Not Found</h1></center>
+<hr><center>nginx</center>
+</body>
+</html>
+`);
 
 const B64 = new Int8Array(128).fill(-1);
 const ALPHABET = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
